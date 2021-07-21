@@ -1,28 +1,30 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { QuotedComponent } from './quoted/quoted.component';
-import { QuotedDetailsComponent } from './quoted-details/quoted-details.component';
-import { QuotedFormsComponent } from './quoted-forms/quoted-forms.component';
-import { DatePipe } from './date.pipe';
-import { HighlightQuoteDirective } from './highlight-quote.directive';
+import { QuotesComponent } from './quotes/quotes.component';
+import { QuoteDetailsComponent } from './quote-details/quote-details.component';
+import { DatePipePipe } from './date-pipe.pipe';
+import { QuotesFormComponent } from './quotes-form/quotes-form.component';
+import { HighlightQouteDirective } from './highlight-qoute.directive';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuotedComponent,
-    QuotedDetailsComponent,
-    QuotedFormsComponent,
-    DatePipe,
-    HighlightQuoteDirective
+    QuotesComponent,
+    QuoteDetailsComponent,
+    DatePipePipe,
+    QuotesFormComponent,
+    HighlightQouteDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-
+    SweetAlert2Module.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

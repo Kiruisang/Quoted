@@ -1,11 +1,11 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'date'
+  name: 'datePipe'
 })
-export class DatePipe implements PipeTransform {
+export class DatePipePipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
+  transform(value: any): number {
     let today:Date = new Date();
     let todayWithNoTime:any = new Date(today.getFullYear(),today.getMonth(),today.getDate())
     var dateDifference =Math.abs(todayWithNoTime - value)
@@ -22,4 +22,3 @@ export class DatePipe implements PipeTransform {
   }
 
 }
- 

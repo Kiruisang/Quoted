@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Quotes } from '../quotes'
+import { Quotes } from '../quote'
 
 @Component({
-  selector: 'app-quoted',
-  templateUrl: './quoted.component.html',
-  styleUrls: ['./quoted.component.css']
+  selector: 'app-quotes',
+  templateUrl: './quotes.component.html',
+  styleUrls: ['./quotes.component.css']
 })
 export class QuotedComponent implements OnInit {
     title = 'Welcome to your world of quotes'
-    quoted: Quotes[] = [
+    quotes: Quotes[] = [
       new Quotes (1, 'Faith', 'Deep','The way I see it, if you  want the rainbow, you have to put up with the rain.','Dolly  Parton', new Date(2021,7,19),0,0),
       new Quotes (2,'Ilkay','Inspiration','If you want to fly   give up everything that weighs you down.','Gurubogsa',new   Date(2021,7,20),0,0),
       new Quotes (3, 'Marion','Love','Sometimes you will never  know the value of a moment until it becomes a memory.','DR   SEUSS',new Date(2021,7,18),0,0),
@@ -16,32 +16,32 @@ export class QuotedComponent implements OnInit {
       new Quotes (5, 'Kiyoko','Philosophical','The way we see the   problem is the problem.','Stephen Covey',new Date(2021,7,21)  ,0,0),
     ];
   get sortQuotes(){
-    return this.quoted.sort((a, b) => {
+    return this.quotes.sort((a, b) => {
       return <any>new Date(.datePosted) - <any>new Date(a.  datePosted);
     });
   }
   get sortQuotes() {
-    return this.quoted.sort((a, b) => {
+    return this.quotes.sort((a, b) => {
       return <any>new Date(b.datePosted) - <any>new Date(a. datePosted);
     });
   }
   addedQuote(quotes){
-    let arraysize = this.quoted.length;
+    let arraysize = this.quotes.length;
     quotes.id = arraysize+1;
     quotes.completeDate = new Date(quotes.completeDate)
-    this.quoted.push(quotes)
+    this.quotes.push(quotes)
   } 
   quoteDelete(isRead, index){
     if (isRead) {
       let toDelete = confirm(`Are you sure you want to delete this Quote?`)
       if(toDelete){
-        this.quoted.splice(index,1);
+        this.quotes.splice(index,1);
       }
       
     }
   }
   displayInfo(index){
-    this.quoted[index].showInfo = !this.quoted[index].showInfo;
+    this.quotes[index].showInfo = !this.quotes[index].showInfo;
   }
     constructor() { }
 

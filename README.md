@@ -2,7 +2,7 @@
 
 ## Author
 
-[Kirui Brian Kipngeno](https://github.com/Owiti-Charles)
+[Kirui Brian Kipngeno](https://github.com/Kiruisang)
 
 ## Description
 
